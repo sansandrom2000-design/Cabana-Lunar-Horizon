@@ -162,6 +162,29 @@
 
         }
 
+        .secao h3 {
+            color: #5c6f58;
+
+        }
+
+        .secao p {
+            color: #0c0c0c;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Controla a cor e o tamanho de todos os ícones da Lucide */
+        .comodidade-item h3 svg {
+            width: 40px;
+            height: 40px;
+            stroke: #8b5a2b;
+            /* Aqui você pode colocar a cor que quiser (ex: um tom amadeirado ou verde) */
+            stroke-width: 2;
+            /* Deixa as linhas do ícone um pouco mais grossas ou finas */
+        }
+
         /*-----------------------------------------------------------------------------------*/
         /* Grid de Comodidades */
         .comodidades-grid {
@@ -188,13 +211,14 @@
             background: transparent;
             padding: 50px;
             border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); */
+
         }
 
         .comodidade-item:hover {
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
+            transform: translateY(-20px);
+            transition: all 0.9s ease;
 
         }
 
@@ -449,7 +473,7 @@
             /* 👈 Agora ela respeita os 95% do resto do seu site */
             margin: 5px auto;
             /* O 'auto' nas laterais centraliza a seção na tela */
-            margin-bottom: 80px;
+            margin-bottom: 30px;
 
         }
 
@@ -535,7 +559,7 @@
             /* Preto suave muito elegante */
             padding: 60px 0;
             color: #ffffff;
-        
+
 
         }
 
@@ -681,7 +705,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            
+
         }
 
         /* --- Código da Reserva Adaptado --- */
@@ -769,13 +793,149 @@
             color: #666;
             font-style: italic;
             margin: 0;
-            
+
         }
 
+        /*-----------------------------------------------------------------------------------*/
 
+        .secao-contato {
+            display: flex;
+            flex-direction: row;
+            gap: 40px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            align-items: center;
+        }
+
+        .contato-mapa {
+            flex: 1;
+            height: 450px;
+            /* Define a altura do quadrado do mapa */
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contato-mapa iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .destaque-localizacao p {
+            margin: 2px 0;
+            font-size: 2.2rem;
+            color: #5c6f58;
+
+        }
+
+        .destaque-localizacao .subtexto {
+            color: #0c0c0c;
+            font-size: 0.95rem;
+            margin-top: 5px;
+        }
+
+        /* Responsividade: Transforma em uma coluna em telas menores (celulares) */
+        @media (max-width: 768px) {
+            .secao-contato {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .contato-mapa {
+                width: 100%;
+                height: 250px;
+                /* Reduz a altura no celular */
+            }
+        }
 
         /*-----------------------------------------------------------------------------------*/
+
+/* Subtítulo explicativo abaixo do título principal */
+.subtitulo-secao {
+    color: #666666;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    margin-top: -10px;
+}
+
+/* Container principal em 3 colunas */
+.atracoes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* Caixa individual de cada atração */
+.atracao-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden; /* Garante que a foto respeite a curvatura das bordas */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Área que envolve a foto da atração */
+.atracao-foto {
+    width: 100%;
+    height: 200px; /* Fixa uma altura uniforme para todas as imagens ficarem iguais */
+    overflow: hidden;
+}
+
+/* Estilização da imagem interna */
+.atracao-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto preencher o quadrado sem distorcer ou esticar */
+    transition: transform 0.3s ease; /* Efeito suave ao passar o mouse */
+}
+
+/* Efeito de aproximação na imagem quando o usuário passa o mouse */
+.atracao-item:hover .atracao-foto img {
+    transform: scale(1.05);
+}
+
+/* Caixa de texto abaixo da foto */
+.atracao-conteudo {
+    padding: 20px;
+}
+
+.atracao-conteudo h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.25rem;
+    color: #222222;
+}
+
+.atracao-conteudo p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Responsividade: Exibe os cards um embaixo do outro em telas menores */
+@media (max-width: 992px) {
+    .atracoes-grid {
+        grid-template-columns: 1fr; /* Muda de 3 para 1 coluna em tablets/celulares */
+        gap: 20px;
+    }
+    
+    .atracao-foto {
+        height: 220px; /* Aumenta um pouco a foto no celular para valorizar a imagem */
+    }
+}
+
+
+
     </style>
+    <!-- Atalho para carregar os ícones no site -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
 </head>
 
 <body>
@@ -810,6 +970,7 @@
         <!-- O restante do seu menu (nav, links, botão de reserva) continua aqui embaixo -->
     </header>
 
+    <!-- --------------------------------------------------------------------------------------- -->
     <header class="hero-slider">
         <!-- As 3 imagens de fundo controladas pelo CSS -->
         <div class="slide-bg"></div>
@@ -829,7 +990,7 @@
             </a>
         </div>
     </header>
-
+    <!-- --------------------------------------------------------------------------------------- -->
     <div class="container">
 
         <!-- Sobre -->
@@ -840,7 +1001,7 @@
                 um céu estrelado incrível.</p>
         </section>
     </div>
-
+    <!-- --------------------------------------------------------------------------------------- -->
     <!-- 📸 NOVO CARROSSEL DE FOTOS DO MEIO DA PÁGINA -->
     <section class="carrossel-meio">
         <div class="slide-meio-bg"></div>
@@ -848,34 +1009,83 @@
         <div class="slide-meio-bg"></div>
     </section>
 
-
-
+    <!-- --------------------------------------------------------------------------------------- -->
     <!-- Comodidades -->
     <section class="secao">
         <h2>O que você vai encontrar</h2>
         <div class="comodidades-grid">
-            <div class="comodidade-item">🔥 Fogueira de chão</div>
-            <div class="comodidade-item">🛁 Banheira com hidromassagem</div>
-            <div class="comodidade-item">🌐 Wi-Fi de alta velocidade</div>
-            <div class="comodidade-item">☕ Cozinha equipada</div>
-            <div class="comodidade-item">🚶‍♂️ Trilha ecológica</div>
-            <div class="comodidade-item">🌄 Natureza</div>
+            <div class="comodidade-item">
+                <h3><i data-lucide="flame"></i> <br> Fogueira de chão</h3>
+                <p>Perfeita para relaxar sob as estrelas e curtir o frio da montanha.</p>
+            </div>
+
+            <div class="comodidade-item">
+                <h3><i data-lucide="bath"></i> <br> Banheira com hidromassagem</h3>
+                <p>Momentos de relaxamento com uma vista incrível da natureza.</p>
+            </div>
+
+            <div class="comodidade-item">
+                <h3><i data-lucide="wifi"></i> <br> Wi-Fi de alta velocidade</h3>
+                <p>Ideal para quem precisa trabalhar remotamente ou assistir séries.</p>
+            </div>
+
+            <div class="comodidade-item">
+                <h3><i data-lucide="coffee"></i> <br> Cozinha equipada</h3>
+                <p>Utensílios completos, fogão e cafeteira para suas refeições.</p>
+            </div>
+
+            <div class="comodidade-item">
+                <h3><i data-lucide="footprints"></i> <br> Trilha ecológica</h3>
+                <p>Caminhadas exclusivas pela propriedade cercada de mata nativa.</p>
+            </div>
+
+            <div class="comodidade-item">
+                <h3><i data-lucide="tree-pine"></i> <br> Natureza</h3>
+                <p>Paz absoluta e ar puro na região de Santo Amaro da Imperatriz.</p>
+            </div>
+
         </div>
     </section>
-
+    <!-- --------------------------------------------------------------------------------------- -->
     <!-- 📸 NOVA FOTO ÚNICA DO MEIO DA PÁGINA -->
     <div class="foto-destaque-container">
         <img src="foto2.jpg" alt="Vista da Cabana Lunar Horizon" class="foto-destaque">
     </div>
-
+    <!-- --------------------------------------------------------------------------------------- -->
     <!-- Contato -->
     <section class="secao">
         <h2>Localização e Contato</h2>
         <p>Estamos localizados na região da grande florianópolis, em Santo Amaro da Imperatriz.</p>
-        <p>Dúvidas? Entre em contato pelo Instagram <strong><a href="https://instagram.com" target="_blank">@cabanalunarhorizon</a></strong> ou pelo WhatsApp.</p>
+        <p>Dúvidas? Entre em contato pelo Instagram <strong><a href="https://instagram.com"
+                    target="_blank">@cabanalunarhorizon</a></strong> ou pelo WhatsApp.</p>
     </section>
+    <!-- --------------------------------------------------------------------------------------- -->
+    <section class="secao-contato">
 
-    </div>
+        <!-- Coluna da Esquerda: Mapa -->
+        <div class="contato-mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1094.9713027293283!2d-48.762000293962004!3d-27.648587191526104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spt-BR!2sbr!4v1787230322260!5m2!1spt-BR!2sbr"
+                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin">
+                width="100%"
+                height="100%"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <!-- Coluna da Direita: Textos e Informações -->
+
+        <div class="destaque-localizacao">
+            <p><strong>Santo Amaro da Imperatriz</strong></p>
+            <p>Santa Catarina, Brasil</p>
+            <p class="subtexto">Há cerca de 30 minutos da capital Florianópolis</p>
+        </div>
+    </section>
+    <!-- --------------------------------------------------------------------------------------- -->
 
     <!-- ⭐️ SEÇÃO DE AVALIAÇÕES (CARROSSEL PRETO FORA A FORA) -->
     <section class="secao-avaliacoes">
@@ -925,7 +1135,7 @@
             <button class="seta-carrossel proximo" onclick="mudarSlide(1)">&#10095;</button>
         </div>
     </section>
-
+    <!-- --------------------------------------------------------------------------------------- -->
     <!-- 📅 SEÇÃO DE RESERVAS BOOKING E AIRBNB (NOVA SEÇÃO) -->
     <div class="conteiner-conteudo">
 
@@ -954,7 +1164,7 @@
 
     </div>
 
-    
+    <!-- --------------------------------------------------------------------------------------- -->
     <!-- 📸 SEÇÃO DO INSTAGRAM COM 3 FOTOS LADO A LADO -->
     <section class="instagram-feed-secao">
         <div class="instagram-texto-topo">
@@ -977,7 +1187,86 @@
             </a>
         </div>
     </section>
+<!-- --------------------------------------------------------------------------------------- -->
+    <!-- Seção: Atrações Locais -->
+<section class="secao">
+    <h2>Atrações Locais</h2>
+    <p class="subtitulo-secao">Explore as belezas naturais e aventuras bem pertinho da nossa cabana.</p>
+    
+    <div class="atracoes-grid">
+        
+        <!-- Cartão 1 -->
+        <div class="atracao-item">
+            <div class="atracao-foto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWD6xEkurlJC-g-Kc4tpE56PoA3YUCdFwQqitONmTsksNkOllBWzXnozg&s=10">
+            </div>
+            <div class="atracao-conteudo">
+                <h3>⛰️ Morro do Queimado</h3>
+                <p>O ponto mais famoso para os amantes de aventura. Com cerca de 600 metros de altitude, oferece uma vista panorâmica espetacular de toda a Grande Florianópolis e é o ponto de partida para saltos de parapente e voo livre.</p>
+            </div>
+        </div>
 
+        <!-- Cartão 2 -->
+        <div class="atracao-item">
+            <div class="atracao-foto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCY2ee-EXrO8DiYvYu1H6xD3vSuVNv7IJL3jnIGia7BeTL3Kr4fL3UBPAb&s=10" alt="Caldas da Imperatriz">
+            </div>
+            <div class="atracao-conteudo">
+                <h3>🛁 Águas Termais de Caldas</h3>
+                <p>Reconhecida internacionalmente, é a primeira estância hidromineral do Brasil. Suas águas brotam naturalmente a cerca de 39°C e são perfeitas para banhos relaxantes e terapêuticos nas tradicionais casas de banho históricas.</p>
+            </div>
+        </div>
+
+        <!-- Cartão 3 -->
+        <div class="atracao-item">
+            <div class="atracao-foto">
+                <img src="https://s2-g1.glbimg.com/QUvXkacbSGO71apcmopoqxJHW2w=/0x0:1280x719/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/2/J/u1lkSaRmCvt6YKSG4QSQ/salto-rio-vermelho.jpg" alt="Cachoeira do Rio Vermelho">
+            </div>
+            <div class="atracao-conteudo">
+                <h3>🌊 Cachoeira do Rio Vermelho</h3>
+                <p>Um verdadeiro refúgio paradisíaco em meio à Mata Atlântica nativa. Conta com uma queda d'água imponente e poços naturais excelentes para banho, acessíveis por meio de uma trilha cercada de ar puro e paz absoluta.</p>
+            </div>
+        </div>
+
+        <!-- Cartão 4: Rafting  -->
+        <div class="atracao-item">
+            <div class="atracao-foto">
+                <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/51/70/a6/caption.jpg?w=1200&h=-1&s=1" alt="Rafting no Rio Cubatão">
+            </div>
+            <div class="atracao-conteudo">
+                <h3>🛶 Rafting no Rio Cubatão</h3>
+                <p>Uma das aventuras mais emocionantes de Santa Catarina! O Rio Cubatão oferece corredeiras eletrizantes cercadas por mata nativa. Há percursos tanto para iniciantes e famílias quanto para quem busca pura adrenalina.</p>
+            </div>
+        </div>
+
+        <!-- Cartão 5: Gastronomia  -->
+        <div class="atracao-item">
+            <div class="atracao-foto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQziD5rpwKKogRLBBFwAORU72JM218Y-Hu666tETOB8fPpj95T6SoAKoTk&s=10" alt="Gastronomia em Santo Amaro">
+            </div>
+            <div class="atracao-conteudo">
+                <h3>🍲 Gastronomia Colonial e Alemã</h3>
+                <p>A culinária local é um atrativo à parte. A cidade é famosa por seus cafés coloniais fartos, bistrôs acolhedores e restaurantes tradicionais que servem deliciosos pratos da cultura alemã e carnes assadas na brasa.</p>
+            </div>
+        </div>
+
+        <!-- Cartão 6: Cultura/Escolha Especial  -->
+        <div class="atracao-item">
+            <div class="atracao-foto">
+                <img src="https://live.staticflickr.com/3684/9340254978_f94fc4421d_z.jpg" alt="Igreja Matriz e Centro Histórico">
+            </div>
+            <div class="atracao-conteudo">
+                <h3>⛪ Charme Imperial e Cultura</h3>
+                <p>O centro histórico da cidade carrega a herança da visita da Família Imperial em 1845. A imponente Igreja Matriz no topo da colina e a arquitetura açoriana local rendem belos passeios culturais, fotografias e momentos de paz.</p>
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+    <!-- --------------------------------------------------------------------------------------- -->
     <footer>
         <!-- Sua Logo -->
         <a href="#">
@@ -1013,8 +1302,6 @@
                 </a>
             </div>
 
-
-
     </footer>
 
     <script>
@@ -1042,7 +1329,9 @@
             slides[slideIndex].classList.add('ativo');
         }
     </script>
-
+    <script>
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
